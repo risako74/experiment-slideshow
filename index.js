@@ -11,22 +11,79 @@ app.engine('html', require('ejs').renderFile);
 app.use(express.static('public')); // static file(css, js, 画像)の読み込み
 
 //'/'にアクセスが来た時にリクエストの内容がreqに入って、レスポンスの内容がresに入る
-app.get('/', function(req, res){
+app.get('/index', function(req, res){
   res.render('index.html');
 });
 
 //socketに関することはioを使う(httpとは規格がちがうため)
+
+//実験者→被験者
 io.on('connection', function(socket){
   console.log('a user connected');
-  socket.on('go clicked', function(msg){
-    socket.broadcast.emit('sent info', msg);
+  socket.on('started', function(msg){
+    socket.broadcast.emit('name', msg);
     console.log('message: ' + msg);
   });
+  socket.on('decided', function(msg){
+    socket.broadcast.emit('selected photo', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('commented_1', function(msg){
+    socket.broadcast.emit('comment1', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('commented_2', function(msg){
+    socket.broadcast.emit('comment2', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('commented_3', function(msg){
+    socket.broadcast.emit('comment3', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('evaluated', function(msg){
+    socket.broadcast.emit('evaluation', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('finished', function(msg){
+    socket.broadcast.emit('wait', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('completed', function(msg){
+    socket.broadcast.emit('slideshow', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('finalized', function(msg){
+    socket.broadcast.emit('eva_start', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('finalized2', function(msg){
+    socket.broadcast.emit('eva_start2', msg);
+    console.log('message: ' + msg);
+  });
+  // socket.on('finalized', function(msg){
+  //   socket.broadcast.emit('finalphoto', msg);
+  //   console.log('message: ' + msg);
+  // });
 });
+
 
 app.get('/experimenter', function(req, res){
   res.render('experimenter.html');
 });
+
+app.get('/slideshow', function(req, res){
+  res.render('slideshow.html');
+});
+
+
+app.get('/index2', function(req, res){
+  res.render('index2.html');
+});
+
+app.get('/experimenter2', function(req, res){
+  res.render('experimenter2.html');
+});
+
 
 server.listen(3000, function(){
   console.log('Example app listening on port 3000!');

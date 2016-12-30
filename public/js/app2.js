@@ -15,14 +15,14 @@
 var socket = io();
 //スタート
 socket.on('name', function(msg){
-  $('#startLayer').prepend('<p id="text0">こんにちは、' + msg + 'さん。<br />あなたにぴったりの動画をおつくりしたいと思っています。</p>');
+  $('#startLayer').prepend('<p id="text0">こんにちは。<br />あなたにぴったりの動画を作るアプリです。</p>');
   $('#text0').fadeIn('slow');
   setTimeout(function(){
     $('#text0').fadeOut('slow');
   }, 3000);
   setTimeout(function(){
     $('#text0').fadeIn('slow');
-    $('#text0').text('まずはあなたの好みをおしえてください。');
+    $('#text0').text('まずはあなたの好みを選択してください。');
   }, 5000);
   setTimeout(function(){
     $('#text0').fadeIn('slow');
@@ -48,55 +48,13 @@ socket.on('selected photo', function(msg){
   $('#overLayer').fadeOut('slow');
 });
 
-//コメントが送られたとき
-socket.on('comment1', function(msg){
-  $('#overLayer').show();
-  $('#text').fadeIn('slow');
-  $('#loading').css('display', 'none');
-  $('#text').text(msg + 'がお好きなようですね!');
-  setTimeout(function(){
-    $('#text').fadeOut('slow')
-  }, 5000);
-});
-
-socket.on('comment2', function(msg){
-  $('#overLayer').show();
-  $('#text').fadeIn('slow');
-  $('#loading').css('display', 'none');
-  $('#text').text(msg + 'もいいですよね…私も好きです！');
-  setTimeout(function(){
-    $('#text').fadeOut('slow')
-  }, 5000);
-});
-
-socket.on('comment3', function(msg){
-  $('#overLayer').show();
-  $('#text').fadeIn('slow');
-  $('#loading').css('display', 'none');
-  $('#text').text(msg);
-  setTimeout(function(){
-    $('#text').fadeOut('slow')
-  }, 5000);
-});
-
 //評価したとき
 $('.photo > button').click(function(){
   socket.emit('evaluated', $(this).attr('label'));
   $('#photo1').css('opacity', '0');
   $('#photo1').attr('src', '/images/selecting.jpg');
+  $('#loading').css('left', '40%');
   $('#loading').css('display', 'block');
-  if($(this).attr('label')=="-100"){
-    $('#smalltalk').text('がーん……。少しお待ちくださいね……。');
-  }
-  else if($(this).attr('label')=="1"){
-    $('#smalltalk').text('うーん…。難しいですね…。');
-  }
-  else if($(this).attr('label')=="2"){
-    $('#smalltalk').text('うんうん！もっと好きなのがないか探しています…');
-  }
-  else{
-    $('#smalltalk').text('よかったです！！次までもう少しお待ち下さいね！！');
-  }
 });
 
 //終わったとき

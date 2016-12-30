@@ -14,24 +14,6 @@ $('#btn1').click(function(){
   $('#userPreference').prepend('<div class="data"><p><img src="/images/' + $('#photoname').val() +'.jpg" width="50%"></p><p>' + $('#photoname').val() +'</p></data>');
 });
 
-$('#btn_a').click(function(){
-  socket.emit('commented_1', $('#message_a').val());
-  setTimeout(function(){
-      $('#message_a').val('');
-  }, 1000);
-});
-
-$('#btn_c').click(function(){
-  socket.emit('commented_2', $('#message_c').val());
-  setTimeout(function(){
-      $('#message_c').val('');
-  }, 1000);
-});
-
-$('.btn_b').click(function(){
-  socket.emit('commented_3', $(this).text());
-});
-
 $('#btn3').click(function(){
   socket.emit('finished', $(this).text());
 });
@@ -40,8 +22,8 @@ $('#btn4').click(function(){
   socket.emit('completed', $(this).text());
 });
 
-$('#btn7').click(function(){
-  socket.emit('finalized', $(this).text());
+$('#btn8').click(function(){
+  socket.emit('finalized2', $(this).text());
 });
 
 //
