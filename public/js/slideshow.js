@@ -22,10 +22,10 @@ var timerID= setInterval(function(){
   function(){
     $('#slideshowInner').css('margin-left', '-655px');
     $('#slideshowInner ul li:first').appendTo('ul');
-  })}, 1000);
+  })}, 5000);
   setTimeout(function(){
         clearInterval(timerID);
-      }, 7000);
+      }, 35000);
 }, 3000);
 
 socket.on('eva_start', function(msg){
@@ -61,22 +61,29 @@ $('.lasteva1 > button').click(function(){
 socket.on('eva_start2', function(msg){
   console.log();
   $('#lasteva').removeClass('lasteva1').addClass('lasteva2');
+  $('.lasteva2 > button').click(function(){
+    console.log();
+    $('.lasteva2').hide();
+    $('#text2').hide();
+    $('#finalLayer').html('<p id="text3">ありがとうございました。</p>');
+    setTimeout(function(){
+          $('#text3').fadeIn('slow');
+        }, 1000);
+    setTimeout(function(){
+          $('#text3').fadeOut('slow');
+        }, 7000);
+  });
   $('#finalLayer').fadeIn('slow');
   setTimeout(function(){
         $('.lasteva2').fadeIn('slow');
       }, 3000);
 });
 
+setTimeout(function() {
+  var $audio = $('#audio');
+    $audio.animate({volume: 0}, 2000);
+}, 35000);
 
-$('.lasteva2 > button').click(function(){
-  console.log();
-  $('.lasteva2').hide();
-  $('#text2').hide();
-  $('#finalLayer').html('<p id="text3">ありがとうございました。</p>');
-  setTimeout(function(){
-        $('#text3').fadeIn('slow');
-      }, 1000);
-  setTimeout(function(){
-        $('#text3').fadeOut('slow');
-      }, 7000);
+$('#lasteva > button').click(function(){
+  socket.emit('finalevaluated', $(this).attr('label'));
 });

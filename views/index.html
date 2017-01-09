@@ -10,7 +10,7 @@
 <body>
   <div id="startLayer"><p><button id="start">はじめる</button></p></div>
   <div id="finishLayer"><p id="text1">ありがとうございました。<br>ただいまあなたにぴったりの写真を選んでいます…</p></div>
-  <p class="photo"><img src="/images/autumn.jpg" alt="" id="photo1"></p>
+  <p class="photo" id="photo_container"><img src="/images/autumn.jpg" alt="" id="photo1"></p>
   <div id="loading"><p><img src="/images/loading.gif" alt=""></p><p id="smalltalk">読み込んでいます。</p></div>
   <div id="overLayer"><p id="text"></p></div>
   <div id="evaluationbtns">
@@ -21,26 +21,10 @@
     <button id="e_btn4" label="5">大好き</button>
     </p>
   </div>
-  <!-- <div id="slideshowLayer">
-    <div id="slideshowWrap">
-    <div id="slideshow">
-        <div id="slideshowInner">
-          <ul>
-            <li><img src="/images/ofz103-27.jpg" alt=""></li>
-            <li><img src="/images/oaz102-25.jpg" alt=""></li>
-            <li><img src="/images/ofx106-21.jpg" alt=""></li>
-            <li><img src="/images/ofx118-22.jpg" alt=""></li>
-            <li><img src="/images/ooq105-19.jpg" alt=""></li>
-          </ul>
-        </div>
-      </div>
-      </div>
-      <div id=finalLayer>
-      </div>
-  </div> -->
 
   <script src="/js/jquery-3.1.1.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/share.js"></script>
   <script src="/js/app.js"></script>
 </body>
 </html>

@@ -12,10 +12,9 @@
 // $('<img src="aoax090-23.jpg">');
 // $('<img src="aofz114-05.jpg">');
 
-var socket = io();
 //スタート
 socket.on('name', function(msg){
-  $('#startLayer').prepend('<p id="text0">こんにちは。<br />あなたにぴったりの動画を作るアプリです。</p>');
+  $('#startLayer').prepend('<p id="text0">こんにちは。<br />あなたにぴったりの動画をお作りします。</p>');
   $('#text0').fadeIn('slow');
   setTimeout(function(){
     $('#text0').fadeOut('slow');
@@ -31,21 +30,6 @@ socket.on('name', function(msg){
   setTimeout(function(){
     $('#start').fadeIn();
   }, 10000);
-});
-
-$('#start').click(function(){
-  $("#startLayer").fadeOut();
-});
-
-
-//写真が選択されたとき
-socket.on('selected photo', function(msg){
-  $('#photo1').attr('src', '/images/' + msg + '.jpg');
-  setTimeout(function(){
-      $('#photo1').css('opacity', '1');
-    $('#loading').css('display', 'none');
-  }, 2000);
-  $('#overLayer').fadeOut('slow');
 });
 
 //評価したとき

@@ -10,40 +10,75 @@
 <body>
   <div id="forInteraction">
     <div class="starting">
-      <p>はじめの挨拶</p>
+      <div class="photoInput">
+        <h3>写真の選択</h3>
+        <input type="text" size="20" id="photoname">
+        <button id="btn1">送信</button>
+        <p class="count">0</p>
+      </div>
+      <div class="greeting">
+      <h3>はじめの挨拶</h3>
       <input type="text" size="20" id="username" label="名前">
       <button id="btn0">送信</button>
-    </div>
-    <div class="photoInput">
-      <p>写真の選択</p>
-      <input type="text" size="20" id="photoname">
-      <button id="btn1">送信</button>
+      </div>
     </div>
     <div class="commentInput">
-      <p>メッセージの送信</p>
-
-      <div><input type="text" size="20" id="message_a">
-      <button id="btn_a">がお好きなようですね</button></div>
-      <div><input type="text" size="20" id="message_c">
-      <button id="btn_c">もいいですよね…私も好きです！</button></div>
-      <div><button class="btn_b">こちらはいかがでしょうか？</button>
-      <button class="btn_b">これもあなたが好きそうな気がするのですがいかがでしょうか？</button>
-      <button class="btn_b">やっぱり！いいですよね！</button>
-      <button class="btn_b">ちがいましたか…。すみません。</button></div>
+      <h3>メッセージの送信</h3>
+      <div>
+        <p>7枚目の前</p>
+        <button class="btn_b">こちらはいかがでしょうか？</button>
+      </div>
+      <div>
+        <p>7~11枚目の間に1回</p>
+        <input type="text" size="20" id="message_a"><button id="btn_a">がお好きなようですね</button>
+        <input type="text" size="20" id="message_d"><button id="btn_d">なら必ずお好き、というわけではなさそうですね…。むずかしい…。</button>
+        <input type="text" size="20" id="message_e"><button id="btn_e">が好きなのかと思っていましたが、私の勘違いでした…。</button>
+        <button class="btn_b">何が写っているかより、雰囲気を大事にされているような気がします…</button>
+      </div>
+      <div>
+        <p>12枚目の後</p>
+        <button class="btn_b">これもあなたが好きそうな気がするのですがいかがですか？</button>
+        <button class="btn_b">これならあなたが好きそうな気がするのですがいかがですか？</button>
+      </div>
+      <div>
+        <p>14枚目の後</p>
+        <button class="btn_b">やっぱり！いいですよね！</button>
+        <button class="btn_b">うんうん、こちらもいいですよね。</button>
+        <button class="btn_b">いまいちですね…。すみません。</button>
+    　</div>
+      <div>
+        <p>15~18枚目の間に1回</p>
+        <input type="text" size="20" id="message_c"><button id="btn_c">もいいですよね…私も好きです！</button>
+        <input type="text" size="20" id="message_f"><button id="btn_f">がお好きだったわけですね…私も好きです！</button>
+        <input type="text" size="20" id="message_g"><button id="btn_g">の方がやっぱりお好きなのでしょうか…</button>
+        <button class="btn_b">こういうのが好きだったんですね！！</button>
+      </div>
+      <div>
+        <p>こまったら</p>
+          <input type="text" size="20" id="message_h"><button id="btn_h">フリー</button>
+      </div>
     </div>
     <div class="finishing">
-      <p>スライドショー作成</p>
+      <h3>スライドショー作成</h3>
       <button id="btn3">◯枚おわり</button>
       <!-- <p><input type="text" size="20" id="slide_photoname"><button id="btn6">追加</button> -->
       <button id="btn4">スライドショー</button>
       <!-- </p> -->
     </div>
     <div class='slide_evaluation'>
-      <p>スライドショー評価</p>
+      <h3>スライドショー評価</h3>
       <button id="btn7">スライドショー終了</button>
     </div>
   </div>
-  <div id="userPreference">
+  <!-- <div id="userPreference">
+  </div> -->
+  <div class="all_photos" id="all_photos">
+    <h3>写真の候補</h3>
+    <!-- <div class="photo_for_select"><img src="/images/ahcx063-28.jpg" width="100px"><p>ahcx063-28</p></div>
+    <div class="photo_for_select"><img src="/images/ahkq049-35.jpg" width="100px"><p>ahkq049-35</p></div>
+    <div class="photo_for_select"><img src="/images/anbx012-01.jpg" width="100px"><p>anbx012-01</p></div>
+    <div class="photo_for_select"><img src="/images/anuz043-13.jpg" width="100px"><p>anuz043-13</p></div>
+    <div class="photo_for_select"><img src="/images/aoax090-23.jpg" width="100px"><p>aoax090-23</p></div> -->
   </div>
 
   <script src="/js/jquery-3.1.1.min.js"></script>

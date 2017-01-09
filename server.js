@@ -36,6 +36,26 @@ io.on('connection', function(socket){
     socket.broadcast.emit('comment2', msg);
     console.log('message: ' + msg);
   });
+  socket.on('commented_4', function(msg){
+    socket.broadcast.emit('comment4', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('commented_5', function(msg){
+    socket.broadcast.emit('comment5', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('commented_6', function(msg){
+    socket.broadcast.emit('comment6', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('commented_7', function(msg){
+    socket.broadcast.emit('comment7', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('commented_8', function(msg){
+    socket.broadcast.emit('comment8', msg);
+    console.log('message: ' + msg);
+  });
   socket.on('commented_3', function(msg){
     socket.broadcast.emit('comment3', msg);
     console.log('message: ' + msg);
@@ -60,6 +80,10 @@ io.on('connection', function(socket){
     socket.broadcast.emit('eva_start2', msg);
     console.log('message: ' + msg);
   });
+  socket.on('finalevaluated', function(msg){
+    socket.broadcast.emit('finish', msg);
+    console.log('message: ' + msg);
+  });
   // socket.on('finalized', function(msg){
   //   socket.broadcast.emit('finalphoto', msg);
   //   console.log('message: ' + msg);
@@ -82,6 +106,10 @@ app.get('/index2', function(req, res){
 
 app.get('/experimenter2', function(req, res){
   res.render('experimenter2.html');
+});
+
+app.get('/experimenter_eva', function(req, res){
+  res.render('experimenter_eva.html');
 });
 
 
