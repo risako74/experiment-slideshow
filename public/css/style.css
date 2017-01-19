@@ -49,11 +49,19 @@
   padding: 300px 0;
 }
 
-#text, #text0, #text1, #text2, #text3{
+#text, #text0, #text1, #text2, #text3, #text4{
 
   font-size: 40px;
   text-align: center;
   color: #222222;
+}
+
+#text5{
+  font-size: 20px;
+  margin-top: 50px;
+  text-align: center;
+  color: #222222;
+  font-family: serif;
 }
 
 #text, #text0{
@@ -62,7 +70,7 @@
   margin: 0 auto;
 }
 
-#text1, #text3{
+#text1, #text3, #text4{
   display: none;
 }
 
@@ -93,8 +101,9 @@ button:hover{
 #loading{
   display: none;
   position: fixed;
+  width: 370px;
   top: 35%;
-  left: 35%;
+  left: 37%;
 }
 
 #loading p{
@@ -134,10 +143,34 @@ button:hover{
   height: 42px;
   margin: 0 20px;
   overflow: hidden;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 #forInteraction button:hover{
+  background-color: #222222;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#forInteraction p{
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.count{
+  font-size: 20px!important ;
+}
+
+#wordchoices button{
+  background-color: #dddddd;
+  border: 2px solid #222222;
+  font-size: 12px;
+  width:100px;
+  height: 40px;
+  margin: 10px 10px 0 0;
+}
+
+#wordchoices button:hover{
   background-color: #222222;
   color: #ffffff;
   cursor: pointer;
@@ -204,6 +237,7 @@ button:hover{
 
 .photoInput p{
   margin-left: 30px;
+  margin-bottom: 0;
 }
 
 .greeting{
@@ -263,6 +297,7 @@ button:hover{
   background: #ffffff;
   display: none;
   padding: 150px 0;
+  text-align: center;
 }
 
 #lasteva{

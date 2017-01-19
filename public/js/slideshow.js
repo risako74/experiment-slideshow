@@ -10,7 +10,7 @@ $('#slideshowInner').css('margin-left', '-655px');
 
 setTimeout(function(){
   $('#slideshowInner').fadeIn('slow');
-}, 2000);
+}, 3000);
 
 
 setTimeout(function(){
@@ -54,8 +54,15 @@ $('.lasteva1 > button').click(function(){
         $('#text3').fadeIn('slow');
       }, 1000);
   setTimeout(function(){
+        $('#text3').fadeIn('slow');
+        $('#text3').text('あなたの残りの1日もよいものになりますように！');
+      }, 5000);
+  setTimeout(function(){
         $('#text3').fadeOut('slow');
-      }, 7000);
+      }, 9000);
+      setTimeout(function(){
+        $('#finalLayer').html('<p id="text5">終了です</p>')
+      }, 12000);
 });
 
 socket.on('eva_start2', function(msg){
@@ -65,13 +72,16 @@ socket.on('eva_start2', function(msg){
     console.log();
     $('.lasteva2').hide();
     $('#text2').hide();
-    $('#finalLayer').html('<p id="text3">ありがとうございました。</p>');
+    $('#finalLayer').html('<p id="text4">ありがとうございました。</p>');
     setTimeout(function(){
-          $('#text3').fadeIn('slow');
+          $('#text4').fadeIn('slow');
         }, 1000);
     setTimeout(function(){
-          $('#text3').fadeOut('slow');
+          $('#text4').fadeOut('slow');
         }, 7000);
+    setTimeout(function(){
+      $('#finalLayer').html('<p id="text5">終了です</p>')
+    }, 10000);
   });
   $('#finalLayer').fadeIn('slow');
   setTimeout(function(){

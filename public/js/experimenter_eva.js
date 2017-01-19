@@ -7,22 +7,22 @@ socket.on('evaluation', function(msg){
   $('#userPreference > .data:first').append('<strong>　　　' + msg + '</strong>');
 });
 socket.on('comment1', function(msg){
-  $('#conversation').prepend('<p>' + msg + 'がお好きなようですね!</p>');
+  $('#conversation').prepend('<p>' + msg + '写真がお好きなようですね!</p>');
 });
 socket.on('comment2', function(msg){
-  $('#conversation').prepend('<p>' + msg + 'もいいですよね…私も好きです！</p>');
+  $('#conversation').prepend('<p>' + msg + '写真もいいですよね…私も好きです！</p>');
 });
 socket.on('comment4', function(msg){
-  $('#conversation').prepend('<p>' + msg + 'なら必ずお好き、というわけではなさそうですね…。むずかしい…。</p>');
+  $('#conversation').prepend('<p>' + msg + '写真なら必ずお好き、というわけではなさそうですね…。むずかしい…。</p>');
 });
 socket.on('comment5', function(msg){
-  $('#conversation').prepend('<p>' + msg + 'が好きなのかと思っていましたが、私の勘違いでした…。</p>');
+  $('#conversation').prepend('<p>' + msg + '写真が好きなのかと思っていましたが、私の勘違いでした…。</p>');
 });
 socket.on('comment6', function(msg){
-  $('#conversation').prepend('<p>' + msg + 'がお好きだったわけですね…私も好きです！</p>');
+  $('#conversation').prepend('<p>' + msg + '写真がお好きだったわけですね…私も好きです！</p>');
 });
 socket.on('comment7', function(msg){
-  $('#conversation').prepend('<p>' + msg + 'の方がやっぱりお好きなのでしょうか…</p>');
+  $('#conversation').prepend('<p>' + msg + '写真の方がやっぱりお好きなのでしょうか…</p>');
 });
 socket.on('comment8', function(msg){
   $('#conversation').prepend('<p>' + msg + '</p>');

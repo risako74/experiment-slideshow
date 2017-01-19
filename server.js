@@ -21,7 +21,15 @@ app.get('/index', function(req, res){
 io.on('connection', function(socket){
   console.log('a user connected');
   socket.on('started', function(msg){
-    socket.broadcast.emit('name', msg);
+    socket.broadcast.emit('nonAppearance', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('started_a', function(msg){
+    socket.broadcast.emit('appearance_a', msg);
+    console.log('message: ' + msg);
+  });
+  socket.on('started_b', function(msg){
+    socket.broadcast.emit('appearance_b', msg);
     console.log('message: ' + msg);
   });
   socket.on('decided', function(msg){

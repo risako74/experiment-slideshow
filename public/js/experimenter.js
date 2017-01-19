@@ -9,8 +9,25 @@ var images = ['ahkx057-42', 'ahwq054-36', 'anbx026-03', 'anuz043-13', 'aofz114-0
     $('#all_photos').append($image);
   }
 var num = 0;
-$('#btn0').click(function(){
-  socket.emit('started', $('#username').val());
+$('#btn0_a').click(function(){
+  socket.emit('started_a', $('#guy').val());
+  $('#guy').val('');
+});
+
+$('#btn0_b').click(function(){
+  socket.emit('started_b', $('#lady').val());
+  $('#lady').val('');
+});
+
+// $('.radiobuttons input').click(function(){
+//   $('#message').val($(this).attr('value'));
+// });
+
+// $('#message').val($('input[name=\'word\']:checked').parent().text());
+// console.log($('input:radio[name=\'word\']:checked').val());
+
+$('.word').click(function(){
+  $('#message').val($(this).text());
 });
 
 $('#btn1').click(function(){
@@ -25,44 +42,44 @@ $('#btn1').click(function(){
 });
 
 $('#btn_a').click(function(){
-  socket.emit('commented_1', $('#message_a').val());
+  socket.emit('commented_1', $('#message').val());
   setTimeout(function(){
-      $('#message_a').val('');
+      $('#message').val('');
   }, 1000);
 });
 
 $('#btn_c').click(function(){
-  socket.emit('commented_2', $('#message_c').val());
+  socket.emit('commented_2', $('#message').val());
   setTimeout(function(){
-      $('#message_c').val('');
+      $('#message').val('');
   }, 1000);
 });
 
 $('#btn_d').click(function(){
-  socket.emit('commented_4', $('#message_d').val());
+  socket.emit('commented_4', $('#message').val());
   setTimeout(function(){
-      $('#message_d').val('');
+      $('#message').val('');
   }, 1000);
 });
 
 $('#btn_e').click(function(){
-  socket.emit('commented_5', $('#message_e').val());
+  socket.emit('commented_5', $('#message').val());
   setTimeout(function(){
-      $('#message_e').val('');
+      $('#message').val('');
   }, 1000);
 });
 
 $('#btn_f').click(function(){
-  socket.emit('commented_6', $('#message_f').val());
+  socket.emit('commented_6', $('#message').val());
   setTimeout(function(){
-      $('#message_f').val('');
+      $('#message').val('');
   }, 1000);
 });
 
 $('#btn_g').click(function(){
-  socket.emit('commented_7', $('#message_g').val());
+  socket.emit('commented_7', $('#message').val());
   setTimeout(function(){
-      $('#message_g').val('');
+      $('#message').val('');
   }, 1000);
 });
 

@@ -13,32 +13,38 @@
 // $('<img src="aofz114-05.jpg">');
 
 //スタート
-socket.on('name', function(msg){
-  $('#startLayer').prepend('<p id="text0">こんにちは。<br />あなたにぴったりの動画をお作りします。</p>');
+socket.on('nonAppearance', function(msg){
+  $('#startLayer').prepend('<p id="text0">こんにちは。<br />あなたにぴったりの動画をお作りしたいと思っています。</p>');
   $('#text0').fadeIn('slow');
   setTimeout(function(){
     $('#text0').fadeOut('slow');
-  }, 3000);
-  setTimeout(function(){
-    $('#text0').fadeIn('slow');
-    $('#text0').text('まずはあなたの好みを選択してください。');
   }, 5000);
   setTimeout(function(){
     $('#text0').fadeIn('slow');
+    $('#text0').text('まずはあなたの好みをおしえてください。');
+  }, 7000);
+  setTimeout(function(){
+    $('#text0').fadeIn('slow');
     $('#text0').text('ゆっくり考えて答えてくださいね…');
-  }, 8000);
+  }, 10000);
   setTimeout(function(){
     $('#start').fadeIn();
-  }, 10000);
+  }, 12000);
 });
 
 //評価したとき
+
+var machineReactions = ['読み込んでいます…。', 'ただいま用意をしています。', '読み込み中です。', '用意に少し時間がかかります…。', 'ただいま読み込み中です…。', '探している最中です。', '準備中です…。', '少々時間がかかります…。', 'ただいま読み込んでいます。', '用意中です…。', '分析をしています…。', '時間がかかっています…。', 'ただいま探しています。', '分析中です。', '準備しています…。', '読み込みに時間がかかります…。', '用意しています…。', '分析している最中です…。'];
+var counts = 0;
+
 $('.photo > button').click(function(){
   socket.emit('evaluated', $(this).attr('label'));
   $('#photo1').css('opacity', '0');
   $('#photo1').attr('src', '/images/selecting.jpg');
   $('#loading').css('left', '40%');
   $('#loading').css('display', 'block');
+  $('#smalltalk').text(machineReactions[counts % machineReactions.length]);
+  counts++;
 });
 
 //終わったとき

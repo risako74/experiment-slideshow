@@ -18,21 +18,34 @@
       </div>
       <div class="greeting">
       <h3>はじめの挨拶</h3>
-      <input type="text" size="20" id="username" label="名前">
-      <button id="btn0">送信</button>
+      <input type="text" size="20" id="guy" label="男性">
+      <button id="btn0_a">お兄さん</button>
+      <input type="text" size="20" id="lady" label="女性">
+      <button id="btn0_b">お姉さん</button>
       </div>
     </div>
     <div class="commentInput">
       <h3>メッセージの送信</h3>
+      <div>
+        <input type="text" size="20" id="message">
+        <div id="wordchoices">
+          <!-- <input type="radio" name="word" value="自然の" checked>自然の<input type="radio" name="word"　value="子供の">子供の<input type="radio" name="word" value="食べ物の">食べ物の -->
+          <div><button class="word">自然の</button><button class="word">海の</button><button class="word">お花の</button><button class="word">緑の</button><button class="word">空の</button><button class="word">夜空の</button><button class="word">夕焼けの</button><button class="word">子供の</button></div>
+          <div><button class="word">人の</button><button class="word">子供の</button><button class="word">カップルのほのぼのした</button><button class="word">若者の元気そうな</button><button class="word">女性が美しい</button><button class="word">可愛らしい女性の</button></div>
+          <div><button class="word">ものの</button><button class="word">お菓子の</button><button class="word">食べ物の</button><button class="word">少し抽象的な</button></div>
+          <div><button class="word">おしゃれな</button><button class="word">ムードのある</button><button class="word">爽やかな</button><button class="word">シンプルな</button><button class="word">光の多い</button><button class="word">可愛らしい</button><button class="word">カラフルな</button><button class="word">楽しそうな</button>
+          <button class="word">焦点が絞られている</button><button class="word">透明感のある</button><button class="word">あたたかみのある</button><button class="word">夕方の</button><button class="word">春っぽい</button><button class="word">夏っぽい</button><button class="word">秋っぽい</button><button class="word">冬っぽい</button></div>
+        </div>
+      </div>
       <div>
         <p>7枚目の前</p>
         <button class="btn_b">こちらはいかがでしょうか？</button>
       </div>
       <div>
         <p>7~11枚目の間に1回</p>
-        <input type="text" size="20" id="message_a"><button id="btn_a">がお好きなようですね</button>
-        <input type="text" size="20" id="message_d"><button id="btn_d">なら必ずお好き、というわけではなさそうですね…。むずかしい…。</button>
-        <input type="text" size="20" id="message_e"><button id="btn_e">が好きなのかと思っていましたが、私の勘違いでした…。</button>
+        <button id="btn_a">写真がお好きなようですね</button>
+        <button id="btn_d">写真なら必ずお好き、というわけではなさそうですね…。むずかしい…。</button>
+        <button id="btn_e">写真が好きなのかと思っていましたが、私の勘違いでした…。</button>
         <button class="btn_b">何が写っているかより、雰囲気を大事にされているような気がします…</button>
       </div>
       <div>
@@ -48,10 +61,11 @@
     　</div>
       <div>
         <p>15~18枚目の間に1回</p>
-        <input type="text" size="20" id="message_c"><button id="btn_c">もいいですよね…私も好きです！</button>
-        <input type="text" size="20" id="message_f"><button id="btn_f">がお好きだったわけですね…私も好きです！</button>
-        <input type="text" size="20" id="message_g"><button id="btn_g">の方がやっぱりお好きなのでしょうか…</button>
+        <button id="btn_c">写真もいいですよね…私も好きです！</button>
+        <button id="btn_f">写真がお好きだったわけですね…私も好きです！</button>
+        <button id="btn_g">写真の方がやっぱりお好きなのでしょうか…</button>
         <button class="btn_b">こういうのが好きだったんですね！！</button>
+        <button class="btn_b">こういうのもお好きなんですね！！</button>
       </div>
       <div>
         <p>こまったら</p>
@@ -74,11 +88,6 @@
   </div> -->
   <div class="all_photos" id="all_photos">
     <h3>写真の候補</h3>
-    <!-- <div class="photo_for_select"><img src="/images/ahcx063-28.jpg" width="100px"><p>ahcx063-28</p></div>
-    <div class="photo_for_select"><img src="/images/ahkq049-35.jpg" width="100px"><p>ahkq049-35</p></div>
-    <div class="photo_for_select"><img src="/images/anbx012-01.jpg" width="100px"><p>anbx012-01</p></div>
-    <div class="photo_for_select"><img src="/images/anuz043-13.jpg" width="100px"><p>anuz043-13</p></div>
-    <div class="photo_for_select"><img src="/images/aoax090-23.jpg" width="100px"><p>aoax090-23</p></div> -->
   </div>
 
   <script src="/js/jquery-3.1.1.min.js"></script>
